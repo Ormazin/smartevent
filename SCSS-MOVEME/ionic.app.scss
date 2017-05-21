@@ -1,0 +1,17 @@
+$assertive: #2F2F2F;
+$stable: #FFFFFF;
+$dark: #000000;
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+@import "../www/lib/ionic/scss";
+#share-buttons img {
+	width: 35px;
+	padding: 5px;
+	border: 0;
+	box-shadow: 0;
+	display: inline;
+}
+
+ion-view,.pane,.view {
+	background-color: #F6F6F6;
+}
+
