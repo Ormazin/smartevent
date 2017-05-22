@@ -18,20 +18,30 @@ function ($scope, $stateParams,$rootScope, $ionicPlatform, $cordovaBeacon) {
 			
             var uniqueBeaconKey;
 			
+			
             for(var i = 0; i < pluginResult.beacons.length; i++) {
                 uniqueBeaconKey = pluginResult.beacons[i].uuid + ":" + pluginResult.beacons[i].major + ":" + pluginResult.beacons[i].minor;
                 $scope.beacons[uniqueBeaconKey] = pluginResult.beacons[i];
 				
+				$("#test_length").html(pluginResult.beacons.lengt);
+				$("#test_uuid").html(pluginResult.beacons[i].uuid);
+				$("#test_major").html(pluginResult.beacons[i].major);
+				$("#test_minor").html(pluginResult.beacons[i].minor);
+				$("#test_uniqueBeaconKey").html($scope.beacons[uniqueBeaconKey]);
+				
+				
             }
-			alert("is work?");
-			alert( "uuid: " + pluginResult.beacons[0].uuid );
+ 
 			
+			$("#test_i").html($scope.beacons[i]);
+			$("#test_out").html("out!");
             $scope.$apply();
 			
 			
 			
 			
         });
+		
 		
 		
 

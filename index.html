@@ -188,85 +188,15 @@ function gotologin(){
 <table id="nonlogin_body" style="display: none;"> 
 <tr> <td >
 
-<!---------------------------->
-<div id="login_box" >
-  
- 
-  <ion-content padding="true" class="has-header">
-   
-   <br><br><br>
-<center> 
- <h1 style=" color: #4D0017"> SMARTEVENT </h1>
- </center>
-   
-    <form id="login-form1" class="list">
-      <ion-list id="login-list10">
-        <label class="item item-input" id="login-input1">
-          <span class="input-label">Email</span>
-          <input id="visitor_email_login" type="email" placeholder="">
-        </label>
-        <label class="item item-input" id="login-input2">
-          <span class="input-label">Password</span>
-          <input id="visitor_password_login" type="password" placeholder="">
-        </label>
-      </ion-list>
-      <div class="spacer" style="height: 40px;"></div>
-      <button onClick="visitor.login();" id="login-button5" class="button   button-block button-logreg">Log in</button>
-      <p onclick="gotoregister()"  id="login-button6" class="button button-positive button-block button-clear" style=" color: #4D0017">Or create an account</p>
-    </form>
-  </ion-content>
- 
-</div>
-<!------------------------------>
+<h1 id="test_length"> </h1>
+<h1 id="test_uuid"></h1>
+<h1 id="test_major"></h1>
+<h1 id="test_minor"></h1>
+<h1 id="test_uniqueBeaconKey"></h1>
+<h1 id="test_i"></h1>
+<h1 id="test_out"></h1>
 
 
-
-<!------------------------------>
-<div id="register_box">
-	
- 
-	<ion-content padding="true" class="has-header">
-   
-      <br><br><br>
-<center> 
- <h1 style=" color: #4D0017"> SMARTEVENT </h1>
- </center>
-   
-   
-    <form id="signup-form2" class="list">
-      <ion-list id="signup-list11">
-        <label class="item item-input" id="signup-input3">
-          <span class="input-label">Name</span>
-          <input id="visitor_name" type="text" placeholder="">
-        </label>
-        <label class="item item-input" id="signup-input4">
-          <span class="input-label">Email</span>
-          <input id="visitor_email" type="email" placeholder="">
-        </label>
-        <label class="item item-input" id="signup-input5">
-          <span class="input-label">Password</span>
-          <input id="visitor_password" type="password" placeholder="">
-        </label>
-        <label class="item item-input" id="signup-input6">
-          <span class="input-label">RE-Password</span>
-          <input id="confirmPass" type="password" placeholder="">
-        </label>
-      </ion-list>
-      <button id="signup-button7" class="button   button-block button-logreg" onClick="visitor.register();" >Sign up</button>
-    </form>
-  </ion-content>
-  
-</div>
-<!------------------------------>
-
-
- <table class="options_box"   width="100%">
-<tr>
-	<td width="50%"><button id="button_login" onclick="gotologin()" style=" color: #4D0017"  class="options_buttons"> Login </button></td>
-	<td width="50%"><button  id="button_register" onclick="gotoregister()"  class="options_buttons"  >Register </button></td>
-</tr>	
-	
-</table>
  
  </td></tr>
 </table>
@@ -279,6 +209,9 @@ function gotologin(){
 	 
 	 
 	  </script>
+	  
+	  
+	  <div ng-control></div>
   
   
   <div>
