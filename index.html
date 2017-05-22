@@ -101,6 +101,7 @@ z-index: 100;
 		
     </style>
 
+    <script src="js/ng-cordova-beacon.js"></script>
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/routes.js"></script>
@@ -116,7 +117,6 @@ z-index: 100;
     
     
     <script>
-	  
 function gotoregister(){
 	document.getElementById("register_box").style.display="block";
 	document.getElementById("login_box").style.display="none";
@@ -151,7 +151,6 @@ function gotologin(){
 
   </head>
   <body ng-app="app" animation="slide-left-right-ios7">
-  
   
   <div id="loading" align="center">
   	<span>loading..</span>
@@ -263,7 +262,7 @@ function gotologin(){
 
  <table class="options_box"   width="100%">
 <tr>
-	<td width="50%"><button id="button_login" onclick="gotologin()" style=" color: #4D0017"  class="options_buttons"> Log in </button></td>
+	<td width="50%"><button id="button_login" onclick="gotologin()" style=" color: #4D0017"  class="options_buttons"> Login </button></td>
 	<td width="50%"><button  id="button_register" onclick="gotoregister()"  class="options_buttons"  >Register </button></td>
 </tr>	
 	
@@ -292,7 +291,5 @@ function gotologin(){
 </div>
  
  
- 	  
-	  
   </body>
 </html>

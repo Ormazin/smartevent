@@ -1,10 +1,46 @@
-angular.module('app.controllers', [])
+angular.module('app.controllers', ['ngCordovaBeacon'])
      
-.controller('homeCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+.controller('homeCtrl', ['$scope', '$stateParams', '$rootScope', '$ionicPlatform', '$cordovaBeacon',// The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams) {
+function ($scope, $stateParams,$rootScope, $ionicPlatform, $cordovaBeacon) {
 
+	
+    $scope.beacons = {};
+
+    $ionicPlatform.ready(function() {
+
+		
+        $cordovaBeacon.requestWhenInUseAuthorization();
+
+        $rootScope.$on("$cordovaBeacon:didRangeBeaconsInRegion", function(event, pluginResult) {
+			
+			
+            var uniqueBeaconKey;
+			alert("on bla bla");
+            for(var i = 0; i < pluginResult.beacons.length; i++) {
+                uniqueBeaconKey = pluginResult.beacons[i].uuid + ":" + pluginResult.beacons[i].major + ":" + pluginResult.beacons[i].minor;
+                $scope.beacons[uniqueBeaconKey] = pluginResult.beacons[i];
+				
+            }
+            $scope.$apply();
+			
+			
+			
+			
+        });
+		
+		
+
+        $cordovaBeacon.startRangingBeaconsInRegion($cordovaBeacon.createBeaconRegion("estimote", "b9407f30-f5f8-466e-aff9-25556b57fe6d"));
+		
+		
+
+    });
+	
+	
+	
+	
   $scope.$on('$ionicView.enter', function(){
     events.active();events.prev();
     });
