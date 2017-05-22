@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="team.jasr.smartevent" version="1.2.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="team.jasr.smartevent" version="1.2.2" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>SMARTEVENT</name>
     <description>
        Creat  SMART EVEMTS!
@@ -16,6 +16,12 @@
    <gap:plugin name="cordova-plugin-network-information" source="npm" version="~1" />
    
     <platform name="ios">
+
+<config-file parent="NSBluetoothPeripheralUsageDescription" platform="ios" target="*-Info.plist">
+    <string>Advertisement would like to use bluetooth.</string>
+</config-file>
+
+
         <icon height="57" platform="ios" src="res/icon/ios/icon.png" width="57" />
         <icon height="114" platform="ios" src="res/icon/ios/icon@2x.png" width="114" />
         <icon height="40" platform="ios" src="res/icon/ios/icon-40.png" width="40" />
@@ -42,6 +48,8 @@
         <splash height="1024" platform="ios" src="res/screen/ios/Default-Portrait~ipad.png" width="768" />
         <splash height="960" platform="ios" src="res/screen/ios/Default@2x~iphone.png" width="640" />
         <splash height="480" platform="ios" src="res/screen/ios/Default~iphone.png" width="320" />
+
+
     </platform>
    
 	<access origin="*" />
