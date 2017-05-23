@@ -44,7 +44,7 @@ function ($scope, $stateParams,$rootScope, $ionicPlatform, $cordovaBeacon) {
 		
 		
 
-        $cordovaBeacon.startRangingBeaconsInRegion($cordovaBeacon.createBeaconRegion("estimote", "8492E75F-4FD6-469D-B132-043FE94921D8"));
+        $cordovaBeacon.startRangingBeaconsInRegion($cordovaBeacon.createBeaconRegion("estimote", "B9407F30-F5F8-466E-AFF9-25556B57FE6D"));
 
 		
 		

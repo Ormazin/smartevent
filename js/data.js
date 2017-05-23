@@ -20,7 +20,7 @@
 
 
 					$.ajax({
-					url: "http://192.168.1.8/Development/Customers/Smart%20Event/website/API/list_booth.php" , 
+					url: "http://smartevent.services/API/list_booth.php" , 
 
 					type: 'GET',
 					crossDomain: true,
@@ -65,7 +65,7 @@
 					gets:(function( id ){
 
 					$.ajax({
-					url: "http://192.168.1.8/Development/Customers/Smart%20Event/website/API/get_booth.php"  , 
+					url: "http://smartevent.services/API/get_booth.php"  , 
 					type: 'POST',
 
 					crossDomain: true,
@@ -148,7 +148,7 @@
 					$("#votes_number").html( parseInt($("#votes_number").text()) + 1 );	  
 					$.ajax({
 
-					url: "http://192.168.1.8/Development/Customers/Smart%20Event/website/API/vote_booth.php"  , 
+					url: "http://smartevent.services/API/vote_booth.php"  , 
 					type: 'POST',
 
 					crossDomain: true,
@@ -194,7 +194,7 @@
 								
 
 					$.ajax({
-					url: "http://192.168.1.8/Development/Customers/Smart%20Event/website/API/active_event.php"  , 
+					url: "http://smartevent.services/API/active_event.php"  , 
 
 					crossDomain: true,
 					dataType: 'json',
@@ -236,7 +236,7 @@
 					gets:(function( id ){
 
 					$.ajax({
-					url: "http://192.168.1.8/Development/Customers/Smart%20Event/website/API/get_event.php"  , 
+					url: "http://smartevent.services/API/get_event.php"  , 
 					type: 'POST',
 
 					crossDomain: true,
@@ -260,7 +260,7 @@
 					/* إخفاء النتائج القديمة */ 
 						
 					$.ajax({
-					url: "http://192.168.1.8/Development/Customers/Smart%20Event/website/API/active_event.php"  , 
+					url: "http://smartevent.services/API/active_event.php"  , 
 
 					crossDomain: true,
 					dataType: 'json',
@@ -303,7 +303,7 @@
 						
 						
 					$.ajax({
-					url: "http://192.168.1.8/Development/Customers/Smart%20Event/website/API/previous_event.php"  , 
+					url: "http://smartevent.services/API/previous_event.php"  , 
 
 					crossDomain: true,
 					dataType: 'json',
@@ -363,7 +363,7 @@
 
 					/* تنفيذ عملية التسجيل بالأجاكس */
 					$.ajax({
-					url: "http://192.168.1.8/Development/Customers/Smart%20Event/website/API/add_visitor.php"  , 
+					url: "http://smartevent.services/API/add_visitor.php"  , 
 					type: 'POST',
 					data:{visitor_name: $("#visitor_name").val() ,visitor_email: $("#visitor_email").val() , visitor_password: $("#visitor_password").val() },
 					crossDomain: true,
@@ -402,7 +402,7 @@
 
 					/* تنفيذ عملية التسجيل بالأجاكس */
 					$.ajax({
-					url: "http://192.168.1.8/Development/Customers/Smart%20Event/website/API/login_visitor.php"  , 
+					url: "http://smartevent.services/API/login_visitor.php"  , 
 					type: 'POST',
 					data:{visitor_email: $("#visitor_email_login").val() , visitor_password: $("#visitor_password_login").val(), remember: true },
 					crossDomain: true,
@@ -505,7 +505,7 @@
 					this.minor = minor;
 						
 					$.ajax({
-					url: "http://192.168.1.8/Development/Customers/Smart%20Event/website/API/searsh_beacon.php"  , 
+					url: "http://smartevent.services/API/searsh_beacon.php"  , 
 					type: 'GET',
 
 					crossDomain: true,

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    
+    
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+   
+
+    <link href="css/ionic.app.css" rel="stylesheet">
+
+    <style type="text/css">
+      .platform-ios .manual-ios-statusbar-padding{
+        padding-top:20px;
+      }
+      .manual-remove-top-padding{
+        padding-top:0px; 
+      }
+      .manual-remove-top-padding .scroll{
+        padding-top:0px !important;
+      }
+      ion-list.manual-list-fullwidth div.list, .list.card.manual-card-fullwidth {
+        margin-left:-10px;
+        margin-right:-10px;
+      }
+      ion-list.manual-list-fullwidth div.list > .item, .list.card.manual-card-fullwidth > .item {
+        border-radius:0px;
+        border-left:0px;
+        border-right: 0px;
+      }
+      .show-list-numbers-and-dots ul{
+        list-style-type: disc;
+        padding-left:40px;
+      }
+      .show-list-numbers-and-dots ol{
+        list-style-type: decimal;
+        padding-left:40px;
+      }
+		
+		
+		#loading{
+		 width:100%; height: calc(100% - 113px); padding-top:calc(50% + 64px); 
+	 	 position:fixed; top: 64px; 
+		 background:rgba(0,0,0,0.0); color: aliceblue;
+			z-index: 1000;
+			display: none;
+		}
+		#loading span{ background:#4D0017; padding: 20px; border-radius: 40px; margin-top: 50%;}
+		
+		
+#nonlogin_body{
+width: 100%; height: 100%;
+background: #EBEBEB url(img/bJC9kXASRSR6yS1w78Ax_events.jpg) ;
+position: fixed; top: 0px ; left: 0px;
+z-index: 100;
+	
+}
+
+.options_box{
+
+	width:100%; height: 100px;
+	position: absolute;
+	bottom:0px;
+	
+}
+  .options_buttons{
+	
+	width:100%;  height: 100px;
+	background: #EBEBEB;
+	color:#B3B3B3 ;
+	font-size: 20px;
+	  outline: none;
+	  border: none;
+	
+}
+
+#register_box{
+	display:none;
+}
+		
+		.button-logreg{
+			background:  #4D0017;
+			color: aliceblue;
+		}
+
+
+
+
+
+		
+    </style>
+
+    <script src="js/ng-cordova-beacon.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/routes.js"></script>
+    
+    <script src="js/directives.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/apply.js"></script>
+
+    
+    <script src="lib/ionicuirouter/ionicUIRouter.js"></script>
+    
+    
+    <script>
+function gotoregister(){
+	document.getElementById("register_box").style.display="block";
+	document.getElementById("login_box").style.display="none";
+	document.getElementById("button_login").style.color="#B3B3B3";
+	document.getElementById("button_register").style.color="#4D0017";
+}
+
+function gotologin(){
+	document.getElementById("login_box").style.display="block";
+	document.getElementById("register_box").style.display="none";
+	document.getElementById("button_register").style.color="#B3B3B3";
+	document.getElementById("button_login").style.color="#4D0017";
+}
+		
+		
+		
+		function hide_sldie_welcome(){
+			
+			$("#slide_welcome").fadeOut();
+			localStorage.setItem("slide_welcome", "false");
+			
+			
+		}
+
+ 
+		
+		
+	
+	  
+	  </script>
+    
+
+  </head>
+  <body ng-app="app" animation="slide-left-right-ios7">
+  
+  <div id="loading" align="center">
+  	<span>loading..</span>
+  </div>
+  
+  
+  
+  <ion-nav [root]="rootPage"></ion-nav>
+
+
+
+
+<ion-content id="slide_welcome" style="postion:fixed; top:0px; z-index:10001; display:none;" padding="false" class=" manual-remove-top-padding" scroll="false">
+    <ion-slides disable-side-menu-drag="" options="{'loop': false}" slider="slider1" delegate-handle="slider1" id="page-slider1" style="width:100%;height:100%;">
+    
+    <ion-slide-page id="page-slide27" style="background:url(&quot;img/17ZjTU0RRKCWnLj9mogz_1.jpg&quot;) no-repeat center;background-size:cover;"></ion-slide-page>
+      <ion-slide-page id="page-slide28" style="background:url(&quot;img/2I8JzxM5TO2iNcqOJYD7_2.jpg&quot;) no-repeat center;background-size:cover;"></ion-slide-page>
+      <ion-slide-page id="page-slide29" style="background:url(&quot;img/FKtX2qocSN66jDbZJ5Zn_3.JPG&quot;) no-repeat center;background-size:cover;"></ion-slide-page>
+      <ion-slide-page id="page-slide210" style="background:url(&quot;img/GACfhmbdSTmgSwBVtW1j_4.jpg&quot;) no-repeat center;background-size:cover;"></ion-slide-page>
+      <ion-slide-page id="page-slide211" style="background:url(&quot;img/JnFFQhVSRQadtaYfnfuq_5.JPG&quot;) no-repeat center;background-size:cover;"></ion-slide-page>
+      <ion-slide-page id="page-slide21" style="background:url(&quot;img/tyJuVhDSKe6rOPVw2Oie_6.jpg&quot;) no-repeat center;background-size:cover;">
+      	
+      	<div style="width:100%; height: 100%;" id="hide_slide_welcome" onclick="hide_sldie_welcome()"></div>
+      	
+      </ion-slide-page>
+      
+		
+		
+    </ion-slides>
+  </ion-content>
+  
+  
+<!---------------------------------------------------------------------->
+ 
+<table id="nonlogin_body" style="display: none;"> 
+<tr> <td >
+
+<!---------------------------->
+<div id="login_box" >
+  
+ 
+  <ion-content padding="true" class="has-header">
+   
+   <br><br><br>
+<center> 
+ <h1 style=" color: #4D0017"> SMARTEVENT </h1>
+ </center>
+   
+    <form id="login-form1" class="list">
+      <ion-list id="login-list10">
+        <label class="item item-input" id="login-input1">
+          <span class="input-label">Email</span>
+          <input id="visitor_email_login" type="email" placeholder="">
+        </label>
+        <label class="item item-input" id="login-input2">
+          <span class="input-label">Password</span>
+          <input id="visitor_password_login" type="password" placeholder="">
+        </label>
+      </ion-list>
+      <div class="spacer" style="height: 40px;"></div>
+      <button onClick="visitor.login();" id="login-button5" class="button   button-block button-logreg">Log in</button>
+      <p onclick="gotoregister()"  id="login-button6" class="button button-positive button-block button-clear" style=" color: #4D0017">Or create an account</p>
+    </form>
+  </ion-content>
+ 
+</div>
+<!------------------------------>
+
+
+
+<!------------------------------>
+<div id="register_box">
+	
+ 
+	<ion-content padding="true" class="has-header">
+   
+      <br><br><br>
+<center> 
+ <h1 style=" color: #4D0017"> SMARTEVENT </h1>
+ </center>
+   
+   
+    <form id="signup-form2" class="list">
+      <ion-list id="signup-list11">
+        <label class="item item-input" id="signup-input3">
+          <span class="input-label">Name</span>
+          <input id="visitor_name" type="text" placeholder="">
+        </label>
+        <label class="item item-input" id="signup-input4">
+          <span class="input-label">Email</span>
+          <input id="visitor_email" type="email" placeholder="">
+        </label>
+        <label class="item item-input" id="signup-input5">
+          <span class="input-label">Password</span>
+          <input id="visitor_password" type="password" placeholder="">
+        </label>
+        <label class="item item-input" id="signup-input6">
+          <span class="input-label">Repeat Password</span>
+          <input id="confirmPass" type="password" placeholder="">
+        </label>
+      </ion-list>
+      <button id="signup-button7" class="button   button-block button-logreg" onClick="visitor.register();" >Sign up</button>
+    </form>
+  </ion-content>
+  
+</div>
+<!------------------------------>
+
+
+ <table class="options_box"   width="100%">
+<tr>
+	<td width="50%"><button id="button_login" onclick="gotologin()" style=" color: #4D0017"  class="options_buttons"> Login </button></td>
+	<td width="50%"><button  id="button_register" onclick="gotoregister()"  class="options_buttons"  >Register </button></td>
+</tr>	
+	
+</table>
+ 
+ </td></tr>
+</table>
+ 
+
+ 
+ <script>
+	    if( localStorage.getItem("slide_welcome") != "false") $("#slide_welcome").show();
+	  	if( localStorage.getItem("login") != "true") $("#nonlogin_body").show();
+	 
+	 
+	  </script>
+	  
+	  
+	  <div ng-control></div>
+  
+  
+  <div>
+  <div>
+    <ion-nav-bar class="bar-dark">
+      <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-nav-view></ion-nav-view>
+  </div>
+</div>
+ 
+ 
+  </body>
+</html>
