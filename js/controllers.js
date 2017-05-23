@@ -16,7 +16,11 @@ function ($scope, $stateParams,$rootScope, $ionicPlatform, $cordovaBeacon) {
         $rootScope.$on("$cordovaBeacon:didRangeBeaconsInRegion", function(event, pluginResult) {
 			
 			
-            var uniqueBeaconKey ,  my_major = 0, my_minor =0;
+			var my_major; 
+			var my_minor;
+			
+			my_major = 0;
+			my_minor = 0;
 			
 			if( pluginResult.beacons.length > 0 ){
 				 my_major = pluginResult.beacons[0].major ;
@@ -25,12 +29,10 @@ function ($scope, $stateParams,$rootScope, $ionicPlatform, $cordovaBeacon) {
 				
 
 			
-            $("#test_uuid").html(my_uuid);
-			$("#test_major").html(my_major);
-			$("#test_minor").html(my_minor);     
-            $("#test_length").html(pluginResult.beacons.length);
-			$("#test_i").html(i);
-			$("#test_out").html("out!");
+			$("#test_major").html("major: " + my_major);
+			$("#test_minor").html("minor: " + my_minor);     
+            $("#test_length").html("length: " + pluginResult.beacons.length);
+			$("#test_out").html("its work!");
             $scope.$apply();
 			
 			
