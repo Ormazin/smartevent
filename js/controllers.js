@@ -9,30 +9,31 @@ function ($scope, $stateParams,$rootScope, $ionicPlatform, $cordovaBeacon) {
     $scope.beacons = {};
 
     $ionicPlatform.ready(function() {
-
 		
+
         $cordovaBeacon.requestWhenInUseAuthorization();
+		 
 
         $rootScope.$on("$cordovaBeacon:didRangeBeaconsInRegion", function(event, pluginResult) {
 			
+         
+		if( pluginResult.beacons.length > 0 ){
+		beacon.major = pluginResult.beacons[0].major ;
+		beacon.minor = pluginResult.beacons[0].minor ;
+		}
 			
-			var my_major; 
-			var my_minor;
+	    if( (beacon.oldmajor != beacon.major) || (beacon.oldminor != beacon.minor) ) {
+	
+		for( var i = 0; i < 6; i++ ) $("#booth_list"+i).fadeOut(300);
+		beacon.oldmajor = beacon.major;
+		beacon.oldminor = beacon.minor;
+		$("#loading").fadeIn();
+		beacon.connect(beacon.major,beacon.minor);	
+		booth.list( beacon.event_id );
 			
-			my_major = 0;
-			my_minor = 0;
-			
-			if( pluginResult.beacons.length > 0 ){
-				 my_major = pluginResult.beacons[0].major ;
-				 my_minor = pluginResult.beacons[0].minor ;
-			}
-				
-
-			
-			$("#test_major").html("major: " + my_major);
-			$("#test_minor").html("minor: " + my_minor);     
-            $("#test_length").html("length: " + pluginResult.beacons.length);
-			$("#test_out").html("its work!");
+		}
+		
+		
             $scope.$apply();
 			
 			
@@ -117,7 +118,7 @@ function ($scope, $stateParams ) {
 function ($scope, $stateParams) {
 
 	
-	
+	$("#loading").fadeOut();
 
 }])
    

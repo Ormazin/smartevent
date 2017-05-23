@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="team.jasr.smartevent" version="1.2.9" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="team.jasr.smartevent" version="1.3.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>SMARTEVENT</name>
     <description>
-       Creat  SMART EVEMTS!
+       Creat  SMART EVENTS!
     </description>
     <author email="support@jasr.team" href="https://jasr.team">
         SmartEvemt Team
