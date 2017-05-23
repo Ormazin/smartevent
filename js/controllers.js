@@ -16,24 +16,36 @@ function ($scope, $stateParams,$rootScope, $ionicPlatform, $cordovaBeacon) {
         $rootScope.$on("$cordovaBeacon:didRangeBeaconsInRegion", function(event, pluginResult) {
 			
 			
-            var uniqueBeaconKey;
+            var uniqueBeaconKey , my_uuid, my_major, my_minor;
 			
 			
             for(var i = 0; i < pluginResult.beacons.length; i++) {
+				
                 uniqueBeaconKey = pluginResult.beacons[i].uuid + ":" + pluginResult.beacons[i].major + ":" + pluginResult.beacons[i].minor;
                 $scope.beacons[uniqueBeaconKey] = pluginResult.beacons[i];
 				
-				$("#test_length").html(pluginResult.beacons.lengt);
-				$("#test_uuid").html(pluginResult.beacons[i].uuid);
-				$("#test_major").html(pluginResult.beacons[i].major);
-				$("#test_minor").html(pluginResult.beacons[i].minor);
-				$("#test_uniqueBeaconKey").html($scope.beacons[uniqueBeaconKey]);
+				if( typeof  pluginResult.beacons[i].uuid !== 'undefined' )
+				my_uuid = pluginResult.beacons[i].uuid;
+				else "No uuid";
+				
+				if( typeof  pluginResult.beacons[i].major !== 'undefined' )
+				my_major = pluginResult.beacons[i].major;
+				else "No major";
+				
+				if( typeof  pluginResult.beacons[i].minor !== 'undefined' )
+				my_minor = pluginResult.beacons[i].minor;
+				else "No minor";
+				
+				
+				$("#test_uuid"+i).html(my_uuid);
+				$("#test_major"+i).html(my_major);
+				$("#test_minor"+i).html(my_minor);
 				
 				
             }
  
-			
-			$("#test_i").html($scope.beacons[i]);
+            $("#test_length").html(pluginResult.beacons.length);
+			$("#test_i").html(i);
 			$("#test_out").html("out!");
             $scope.$apply();
 			
