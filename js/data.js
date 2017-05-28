@@ -153,12 +153,16 @@
 
 					crossDomain: true,
 					dataType: 'json',
-					data:{booth_id: id},	  
+					data:{booth_id: id, visitor_email: localStorage.getItem("email") },	  
 					success: (function(data){
 
 
 
 					$("#vote_button").fadeOut(300);
+						
+					if( data.success == "false" ){
+					alert("You have already voted before");	
+					}	
 
 
 
@@ -351,21 +355,19 @@
 					/*****************************************************************/
 					var visitor = {
 
-
+                     email: "",
 					/*****************************************************************/
 					/* دالة مخصصة لتنفيذ عملية التسجيل */
 					/*****************************************************************/
 					register: (function(){
 
-
-					/* if(1) التأكد من أنّ الباسوردين متوافقين */
-					if( $("#visitor_password").val() == $("#confirmPass").val() ){
+ 
 
 					/* تنفيذ عملية التسجيل بالأجاكس */
 					$.ajax({
 					url: "http://smartevent.services/API/add_visitor.php"  , 
 					type: 'POST',
-					data:{visitor_name: $("#visitor_name").val() ,visitor_email: $("#visitor_email").val() , visitor_password: $("#visitor_password").val() },
+					data:{visitor_name: $("#visitor_name").val() ,visitor_email: $("#visitor_email").val() , visitor_password: $("#visitor_password").val(), visitor_password2: $("#visitor_password2").val() },
 					crossDomain: true,
 					dataType: 'json',
 					success: (function(data){
@@ -385,12 +387,8 @@
 					})/* End success */
 					});/* End Ajax */
 
-					}/* End if(1) */
-
-					/* else(1) إذا لم يكن الباسوردين متوافقين */
-					else{
-					alert("Please rewrite confirm password");	  
-					}/* End Else(1) */
+				
+						
 
 					}),/* End Function register */
 
@@ -417,8 +415,11 @@
 
 					/* تنفيذ التحويل */
 					$("#nonlogin_body").slideUp(300);
+						
+					visitor.email = $("#visitor_email_login").val();
 
 					localStorage.setItem("login", "true");
+					localStorage.setItem("email", $("#visitor_email_login").val() );
 
 					}/* End if(2) */
 					else { alert(data.status_message); }	  
